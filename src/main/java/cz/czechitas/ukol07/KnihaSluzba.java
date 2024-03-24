@@ -14,7 +14,7 @@ public class KnihaSluzba {
 
     public KnihaSluzba() throws IOException {
         // Načtení JSON souboru pomocí InputStream
-        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("/resources/knihy.json")) {
+        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("cz/czechitas/uko07/nihy.json")) {
             // Inicializace ObjectMapper
             ObjectMapper objectMapper = new ObjectMapper();
             // Načtení seznamu knih ze souboru
