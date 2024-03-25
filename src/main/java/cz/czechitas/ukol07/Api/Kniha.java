@@ -1,4 +1,4 @@
-package cz.czechitas.ukol07;
+package cz.czechitas.ukol07.Api;
 
 public class Kniha {
     private String autor;
@@ -10,6 +10,10 @@ public class Kniha {
         this.autor = autor;
         this.nazev = nazev;
         this.rokVydani = rokVydani;
+    }
+
+    public Kniha() {
+        // Default constructor
     }
 
     // Gettery a Settery ??

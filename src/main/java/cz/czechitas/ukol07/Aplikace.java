@@ -3,6 +3,8 @@ package cz.czechitas.ukol07;
 
 import java.io.IOException;
 import java.util.List;
+import cz.czechitas.ukol07.Api.Kniha;
+import cz.czechitas.ukol07.Api.KnihaSluzba;
 
 
 public class Aplikace {

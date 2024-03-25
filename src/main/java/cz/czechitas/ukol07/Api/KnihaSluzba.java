@@ -1,7 +1,8 @@
-package cz.czechitas.ukol07;
+package cz.czechitas.ukol07.Api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +15,7 @@ public class KnihaSluzba {
 
     public KnihaSluzba() throws IOException {
         // Načtení JSON souboru pomocí InputStream
-        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("cz/czechitas/uko07/nihy.json")) {
+        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("/cz/czechitas/ukol07/knihy.json")) {
             // Inicializace ObjectMapper
             ObjectMapper objectMapper = new ObjectMapper();
             // Načtení seznamu knih ze souboru
