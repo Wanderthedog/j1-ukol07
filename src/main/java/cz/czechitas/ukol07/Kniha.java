@@ -1,4 +1,4 @@
-package cz.czechitas.ukol07.Api;
+package cz.czechitas.ukol07;
 
 public class Kniha {
     private String autor;
@@ -16,7 +16,7 @@ public class Kniha {
         // Default constructor
     }
 
-    // Gettery a Settery ??
+    // Gettery a Settery ?? |musí být setter, jestli ho nebudu validovat?
     public String getAutor() {
         return autor;
     }
@@ -39,5 +39,14 @@ public class Kniha {
 
     public void setRokVydani(int rokVydani) {
         this.rokVydani = rokVydani;
+    }
+
+    @Override
+    public String toString() {
+        return "Kniha{" +
+                "autor='" + autor + '\'' +
+                ", nazev='" + nazev + '\'' +
+                ", rokVydani=" + rokVydani +
+                '}';
     }
 }

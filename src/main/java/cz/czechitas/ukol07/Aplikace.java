@@ -3,30 +3,22 @@ package cz.czechitas.ukol07;
 
 import java.io.IOException;
 import java.util.List;
-import cz.czechitas.ukol07.Api.Kniha;
-import cz.czechitas.ukol07.Api.KnihaSluzba;
 
 
 public class Aplikace {
 
     public static void main(String[] args) {
         try {
-            // Vytvoření instance třídy KnihaSluzba
-            KnihaSluzba knihaSluzba = new KnihaSluzba();
+            KnihaSluzba knihaSluzba = new KnihaSluzba(); // instance třídy KnihaSluzba
 
-            // Celkový počet knih v databázi
-            List<Kniha> seznamKnih = knihaSluzba.getSeznamKnih();
+            List<Kniha> seznamKnih = knihaSluzba.getSeznamKnih(); // Celkový počet knih v databázi
             System.out.println("Celkový počet knih v databázi: " + seznamKnih.size());
-
-            // Názvy knih napsané Karlem Čapkem
-            System.out.println("Knihy napsané Karlem Čapkem:");
+            System.out.println("Knihy, které napsal Karel Čapek:"); // Vypište do konzole názvy všech knížek, které napsal Karel Čapek.
             List<Kniha> knihyKarlaCapka = knihaSluzba.getKnihyOdAutora("Karel Čapek");
             for (Kniha kniha : knihyKarlaCapka) {
                 System.out.println(kniha.getNazev());
             }
-
-            // Knihy vydané poprvé v roce 1845
-            System.out.println("Knihy vydané poprvé v roce 1845:");
+            System.out.println("Knihy vydané poprvé v roce 1845:");  // Vypište všechny knížky vydané poprvé v roce 1845
             List<Kniha> knihyVRoce1845 = knihaSluzba.getKnihyVRoce(1845);
             for (Kniha kniha : knihyVRoce1845) {
                 System.out.println(kniha.getAutor() + ": " + kniha.getNazev());

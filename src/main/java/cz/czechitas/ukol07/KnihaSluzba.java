@@ -1,4 +1,4 @@
-package cz.czechitas.ukol07.Api;
+package cz.czechitas.ukol07;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,12 +14,14 @@ public class KnihaSluzba {
     private List<Kniha> seznamKnih;
 
     public KnihaSluzba() throws IOException {
-        // Načtení JSON souboru pomocí InputStream
-        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("/cz/czechitas/ukol07/knihy.json")) {
-            // Inicializace ObjectMapper
-            ObjectMapper objectMapper = new ObjectMapper();
-            // Načtení seznamu knih ze souboru
-            seznamKnih = objectMapper.readValue(inputStream, new TypeReference<List<Kniha>>() {});
+        nactiKnihyZJson();
+    }
+
+    private void nactiKnihyZJson() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try (InputStream inputStream = KnihaSluzba.class.getResourceAsStream("knihy.json")) {
+            seznamKnih = objectMapper.readValue(inputStream, new TypeReference<>() {
+            });
         }
     }
 
