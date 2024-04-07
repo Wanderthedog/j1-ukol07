@@ -16,12 +16,14 @@ public class Kniha {
         // Default constructor
     }
 
-    // Gettery a Settery ?? |musí být setter, jestli ho nebudu validovat?
     public String getAutor() {
         return autor;
     }
 
     public void setAutor(String autor) {
+        if (autor == null || autor.isEmpty()) {
+            throw new IllegalArgumentException("Autor nemůže být null nebo prázdný řetězec");
+        }
         this.autor = autor;
     }
 
@@ -30,6 +32,9 @@ public class Kniha {
     }
 
     public void setNazev(String nazev) {
+        if (nazev == null || nazev.isEmpty()) {
+            throw new IllegalArgumentException("Název nemůže být null nebo prázdný řetězec");
+        }
         this.nazev = nazev;
     }
 
@@ -38,6 +43,9 @@ public class Kniha {
     }
 
     public void setRokVydani(int rokVydani) {
+        if (rokVydani <= 1454 || rokVydani > 2024) {
+            throw new IllegalArgumentException("Neplatný rok vydání");
+        }
         this.rokVydani = rokVydani;
     }
 
